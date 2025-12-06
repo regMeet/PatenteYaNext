@@ -1,0 +1,43 @@
+{
+  "name": "temp_app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "deploy:db-rules": "firebase deploy --only firestore:rules",
+    "deploy:db-indexes": "firebase deploy --only firestore:indexes",
+    "deploy:storage-rules": "firebase deploy --only storage",
+    "deploy:hosting": "npm run build && firebase deploy --only hosting",
+    "deploy:firestore": "firebase deploy --only firestore",
+    "deploy:all": "npm run build && firebase deploy",
+    "deploy:rules": "firebase deploy --only firestore:rules,storage",
+    "emulators:start": "firebase emulators:start",
+    "emulators:export": "firebase emulators:export ./firebase-export",
+    "emulators:import": "firebase emulators:start --import=./firebase-export",
+    "deploy-vercel": "vercel",
+    "deploy-vercel:prod": "vercel --prod"
+  },
+  "dependencies": {
+    "firebase": "^12.6.0",
+    "lucide-react": "^0.555.0",
+    "next": "16.0.6",
+    "ngeohash": "^0.6.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-hook-form": "^7.67.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/ngeohash": "^0.6.8",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
